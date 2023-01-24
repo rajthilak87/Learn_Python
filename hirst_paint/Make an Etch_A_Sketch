@@ -1,0 +1,32 @@
+from turtle import Turtle, Screen
+
+tim = Turtle()
+screen = Screen()
+
+def move_fwd():
+    tim.forward(20)
+
+def erase():
+    # tim.clear()
+    tim.reset()
+    
+def move_bwd():
+    tim.bk(20)
+
+def turn_left():
+    new_heading = tim.heading() + 10
+    tim.setheading(new_heading)
+    # tim.left(90)
+
+def turn_right():    
+    new_heading = tim.heading() + 10
+    tim.setheading(new_heading)
+
+
+screen.listen()
+screen.onkey(move_fwd, "f")
+screen.onkey(move_bwd, "b")
+screen.onkey(turn_left, "l")
+screen.onkey(turn_right, "r")
+screen.onkey(erase, "c")
+screen.exitonclick()
